@@ -14,8 +14,12 @@ import pandas as pd
     
 #     return data
 
-API_URL = "http://universities.hipolabs.com/search?country=India"
-data = requests.get(API_URL).json()
-print(">> API_URL", type(API_URL), API_URL)
-print(">> data", type(data), data)
+try:
+    API_URL = "http://universities.hipolabs.com/search?country=India"
+    data = requests.get(API_URL).json()
+    print(">> API_URL", type(API_URL), API_URL)
+    print(">> data", type(data), data)
+    
+except:
+    print("Error occured while fetching the API url! ")
 
