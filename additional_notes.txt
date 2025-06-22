@@ -1,0 +1,11 @@
+Future enhancements:
+
+1. Try to search and find API from https://aiu.ac.in/ (Association of Indian Universities) and check whether the API
+consists of info like:
+- Contact no
+- Pincode
+- Alumni
+- Establishment year
+- Principal & Vice Principal Details
+- Teaching Staff Information
+with these features addition, load the final data as per plan.
