@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
-# from sqlalchemy import create_engine
+from sqlalchemy import create_engine
+from sqlalchemy.exc import ArgumentError
 
 # def extract()-> dict:
 #     """Extract:
@@ -89,5 +90,14 @@ df['web_pages'] = df['web_pages'].astype(str).str.replace('[', '', regex=False).
 
 print(">> df.head(15)", "\n", df.head(15))
 
+# Loading the data into sqlite database using SQLAlchemy
 
+try:
+    db_engine = create_engine('sqlite:///my_db.db')
+    print("Database successfully created! ")
+    df.to_sql("indian_universities", db_engine, if_exists='replace')
+    print("Data successfully loaded! ")
+# except ArgumentError as e:
+except Exception as e:
+    print(f"Error occured: {e}! ")
 
